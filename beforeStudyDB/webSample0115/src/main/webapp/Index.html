@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		var a = 10;
+		var b = 20;
+		var result = 0;
+		result = a+b;
+		
+		function testFunc(formName)
+		{
+			//alert("hello");
+			var form = formName;
+			//document.write(form.num1.value);
+			//document.write(form.num2.value);
+			var num1 = form.num1.value;
+			var num2 = form.num2.value;
+			
+			var result = 0;
+			result = parseInt(num1) + parseInt(num2);
+			document.write("결과 : " + result);
+		}
+		testFunc(result)
+</script>
+
+</head>
+<body>
+	<br>
+	Hello World!
+	<br>
+	<!--
+	<form name = "frm"> 
+		<input type="text" name = "num1" value=""/>
+		<input type="text" name = "num2" value=""/>
+		<input type="button" id = "btn" value = "계산하기" onclick="javascript:testFunc(this.form);"/>
+	</form>
+	-->
+	
+	<!--<button id = "btn" >이벤트 핸들러 실행</button>
+	<input type = "button" id = "btn" value = "이벤트 핸들러 실행"/>
+	<script>
+		function HelloFunc()
+		{
+			alert("hello ");
+		}
+		var btn = document.getElementById("btn");
+		btn.onclick = HelloFunc;
+	</script>
+	
+	<input type = "button" id = "btn" value = "이벤트 리스너 실행"/>
+	<script>
+		
+		var btn = document.getElementById("btn");
+		btn.addEventListener("click", function(e)
+		{
+			alert("call event!!")
+			btn.addEventListener("mouseout" , function(e)
+			{
+			e.currentTarget.style.backgroundColor = "red";
+		},false)
+		}, false);
+		
+	</script>
+	<br><br>-->
+	<script>
+		const arr1 = new Array(1,2,3);
+		const arr2 = [1,2,3];
+		document.write(arr1 + "<br>");
+		document.write(arr1.length + "<br>");
+		document.write(arr2[0] + "<br>");
+		document.write(arr2[1] + "<br>");
+	
+	</script>
+	<br><br>
+	<script>
+		class CPerson
+		{
+			constructor(name, age)
+			{
+				this.name = name;
+				this.age = age;
+			}
+			infomation()
+			{
+				alert(this.name + " " + this.age);
+			}
+		}
+		var cp = new CPerson("yi", 29);
+		cp.infomation();
+	</script>
+	
+</body>
+</html>

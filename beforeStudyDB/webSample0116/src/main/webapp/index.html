@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+	<input type="button" id = "btnClick" value = "eventExe"/>
+	<script>
+		function gugudan()
+		{
+			for(var i = 1; i < 10; i++)
+			{
+				for(var j = 1; j < 10; j++)
+				{
+					document.write(i +"x" +j + "=" + (i*j));
+				}
+				document.write("<br><br>");
+			}
+		}
+		
+		var btnClick = document.getElementById("btnClick");
+		 btnClick.onclick = gugudan;
+	</script>
+	
+
+	<script>
+		function form_chk(formname)
+		{
+			var frm = formname;
+			
+			if(frm.uid.value == "")
+			{
+				alert("id가 입력되지 않았습니다.");
+			}
+			else if(frm.pw.value == "")
+			{
+				alert("pw가 입력되지 않았습니다.");
+			}
+			else if(frm.names.value == "")
+			{
+				alert("이름이 입력되지 않았습니다.");
+			}
+			if(frm.jobs.value == "none")
+			{
+				alert("직업을 선택하세요.");
+			}
+			frm.action = "./success.html";
+			frm.submit();
+			alert("회원가입 가입완료");
+		}
+	</script>
+	
+	
+	<br>
+	<form name = "register">
+		<table>
+			
+		<tr><td><input type = "text" name = "uid" value =""/> </td></tr>
+		<tr><td><input type = "password" name = "pw" value =""/> </td></tr>
+		<tr><td><input type = "text" name = "names" value =""/> </td></tr>
+		
+		<tr><td>
+		<select name = "jobs">
+			<option selected>none</option>
+			<option>학생</option>
+			<option>교수</option>
+			<option>연구원</option>
+		</select>
+		</td></td>
+		</table>
+		<input type = "button" name ="" value = "회원가입" onclick= "javascript:form_chk(this.form);"> 
+	</form>
+	-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				$.ajax({
+					type:"get",
+					url:"datalist.json",
+					dataType:"json",
+					success:function(data){
+						$.each(data, function(i){
+							//alert(data[i].id+","+data[i].pw+","+data[i].address);
+							document.write(data[i].id+","+data[i].pw+","+data[i].address+"<br>");
+						});
+					},
+					error:function(data){
+						alert("error");
+					}
+				});
+			});
+		});
+	</script>
+
+	<button type = "button" id = "btn">Json Data 호출</button>
+	
+</body>
+</html>

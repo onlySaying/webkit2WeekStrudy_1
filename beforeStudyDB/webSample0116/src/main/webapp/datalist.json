@@ -1,0 +1,5 @@
+[
+	{"id" : "admin1", "pw" : "1234", "address" : "gumi"},
+	{"id" : "admin2", "pw" : "1234", "address" : "deagu"},
+	{"id" : "admin3", "pw" : "1234", "address" : "gumi"}
+]
